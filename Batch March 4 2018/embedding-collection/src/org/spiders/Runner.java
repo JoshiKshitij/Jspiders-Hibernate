@@ -5,47 +5,68 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 import com.spiders.HibernateUtil;
 
 public class Runner {
 
 	public static void main(String[] args) {
-
-		SessionFactory factory = HibernateUtil.getFactory();
-
+		SessionFactory factory = HibernateUtil.getFactory(); // hibrnate.cfg.xml
+		
+		// to perform CRUD opertaions
 		Session session = factory.openSession();
-		Transaction transaction = session.beginTransaction();
-
-		Tree mangoTree = new Tree();
-		mangoTree.setTreeName("mango tree");
-		mangoTree.setAge(40);
-
-		List<Fruits> fruits = new ArrayList<Fruits>();
-
-		Fruits mangoFruit1 = new Fruits();
-		mangoFruit1.setColor("yello");
-		mangoFruit1.setNoOfSeeds(1);
-
-		Fruits mangoFruit2 = new Fruits();
-		mangoFruit2.setColor("green yello");
-		mangoFruit2.setNoOfSeeds(1);
-
-		Fruits mangoFruit3 = new Fruits();
-		mangoFruit3.setColor("green");
-		mangoFruit3.setNoOfSeeds(1);
-
-		fruits.add(mangoFruit1);
-		fruits.add(mangoFruit2);
-		fruits.add(mangoFruit3);
-
-		mangoTree.setFruits(fruits);
-
-		session.save(mangoTree);
-
-		transaction.commit();
-
+		
+		
+		Library marvat = new Library();
+		marvat.setName("marvat");
+		marvat.setLibrarianName("Mr Taneja");
+		
+		// create a list of books
+		List<Books> listOfBooks = new ArrayList<Books>();
+		Books halfGf = new Books();
+		halfGf.setAuthor("chetan bhagat");
+		halfGf.setName("half girlFriend");
+		Books theAlchamist = new Books();
+		theAlchamist.setAuthor("paulo cohelo");
+		theAlchamist.setName("The Alchamist");
+		Books rdpd = new Books();
+		rdpd.setAuthor("roberts");
+		rdpd.setName("Rich dad poor dad");
+		listOfBooks.add(halfGf);
+		listOfBooks.add(theAlchamist);
+		listOfBooks.add(rdpd);
+		marvat.setListOfBooks(listOfBooks);
+		
+		
+		Library hinduja = new Library();
+		hinduja.setName("hinduja");
+		hinduja.setLibrarianName("Mr Singh");
+		
+        List<Books> listOfBooksForHinduaj = new ArrayList<Books>();
+		Books wwcwud = new Books();
+		wwcwud.setAuthor("orbin sharna");
+		wwcwud.setName("Who will cry when u die");
+		Books theKiteRunner = new Books();
+		theKiteRunner.setAuthor("ahemd");
+		theKiteRunner.setName("the kite runner");
+		Books mwshf = new Books();
+		mwshf.setAuthor("div methew");
+		mwshf.setName("monk who sold his ferrari");
+		listOfBooksForHinduaj.add(mwshf);
+		listOfBooksForHinduaj.add(wwcwud);
+		listOfBooksForHinduaj.add(theKiteRunner);
+		hinduja.setListOfBooks(listOfBooksForHinduaj);
+		
+		
+		
+		
+		session.beginTransaction();
+		
+		session.save(marvat);
+		
+		session.save(hinduja);
+		session.getTransaction().commit();
+		
+		session.close();
 	}
 }

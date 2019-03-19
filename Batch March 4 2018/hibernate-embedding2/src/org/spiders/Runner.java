@@ -5,14 +5,13 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.spiders.HibernateUtil;
+
 public class Runner {
 	
 	public static void main(String[] args) {
 		
-		Configuration configuration = new Configuration();
-		configuration.configure();
-		
-		SessionFactory factory = configuration.buildSessionFactory();
+		SessionFactory factory = HibernateUtil.getFactory();
 		
 		Session session = factory.openSession();
 		
