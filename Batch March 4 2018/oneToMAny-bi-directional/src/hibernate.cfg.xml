@@ -9,9 +9,9 @@
 		<property name="hibernate.connection.password">root</property>
 		 <property name="show_sql">true</property>
 		<property name="format_sql">true</property>
-		<property name="hbm2ddl.auto">create</property> 
-		<mapping class = "org.spiders.Liberary"/>
-		<mapping class = "org.spiders.Books"/>
+		<property name="hbm2ddl.auto">update</property> 
+		<mapping class = "org.spiders.dto.LiberaryDto"/>
+		<mapping class = "org.spiders.dto.BooksDto"/>
 		
 	</session-factory>
 </hibernate-configuration>
