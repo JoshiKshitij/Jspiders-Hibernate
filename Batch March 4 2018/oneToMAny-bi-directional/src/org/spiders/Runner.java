@@ -41,9 +41,26 @@ public class Runner {
 		 */
 		
 		LiberaryDao liberaryDao = new LiberaryDao();
-		LiberaryDto liberaryDto = liberaryDao.getLiberaryById(1);
-		System.out.println(liberaryDto.getLibNAme());
+		
+		
+		// new object 
+		LiberaryDto liberaryDto = new LiberaryDto();
+		liberaryDto.setId(1);
+		liberaryDto.setLibNAme("Ajanta");
+		liberaryDto.setLocation("mumbai");
+		
+		
+		liberaryDao.updateLiberary(liberaryDto);
+		
+		
+		
+		
+		
+		//LiberaryDto liberaryDto = liberaryDao.getLiberaryById(1);
+		//System.out.println(liberaryDto.getLibNAme());
 		//System.out.println(liberaryDto.getListOfBooks());
 
+		
+		
 	}
 }
