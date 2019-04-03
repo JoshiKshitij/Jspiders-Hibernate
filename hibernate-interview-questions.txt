@@ -1,0 +1,25 @@
+Ques. What is Hibernate Framework?
+Ques. What is Java Persistence API (JPA)?
+Ques. What are the important benefits of using Hibernate Framework?
+Ques. What are the advantages of Hibernate over JDBC?
+Ques. Name some important interfaces of Hibernate framework?
+Ques. What is hibernate configuration file?
+Ques. What is hibernate mapping file? - xml configuration (we have used annotions)
+Ques. Name some important annotations used for Hibernate mapping?
+Ques. What is Hibernate SessionFactory and how to configure it?
+Ques. What is Hibernate Session and how to get it?
+Ques. What is difference between openSession and getCurrentSession?
+Ques. What is difference between Hibernate Session get() and load() method?
+Ques. What is hibernate caching? Explain Hibernate first level cache?
+Ques. What are different states of an entity in hibernate?
+Ques. What is difference between Hibernate save() and  persist() methods?
+Ques. What will happen if we don’t have no-args constructor in Entity bean?
+Ques. Why we should not make Entity Class final?
+Ques. What is HQL and what are it’s benefits?
+Ques. Can we execute native sql query in hibernate?
+Ques. What is Hibernate Proxy and how it helps in lazy loading?
+Ques. How to implement relationships in hibernate?
+Ques. How transaction management works in Hibernate?
+Ques. What is cascading and what are different types of cascading?
+Ques. How to integrate Hibernate and Spring frameworks?
+Ques. What are best practices to follow with Hibernate framework?
