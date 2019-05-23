@@ -13,20 +13,22 @@ public class SaveObject {
 		Configuration cfg = new Configuration();
 		cfg.configure();
 		
-		
 		SessionFactory factory = cfg.buildSessionFactory();
-		
 		Session session = factory.openSession();
 		
 		Transaction tx = session.beginTransaction();
 		
-		
 		Institute jspiders = new Institute();
-		jspiders.setId(100);
-		jspiders.setName("jsidpers");;
-		jspiders.setFee(30000);
 		
+		
+		jspiders.setId(103);
 		session.save(jspiders);
+		
+	
+		jspiders.setName("home");;
+		jspiders.setFee(100);
+		
+		
 		
 		tx.commit();
 		
