@@ -20,6 +20,8 @@ public class DeleteObject {
 		Transaction transaction = session.beginTransaction();
 		
 		Institute i103 = session.get(Institute.class, 103);
+		
+		if(i103 != null)
 		session.delete(i103);
 		
 		transaction.commit();

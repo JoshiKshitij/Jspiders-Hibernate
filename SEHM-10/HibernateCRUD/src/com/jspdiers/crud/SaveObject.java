@@ -4,7 +4,6 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.jpa.event.internal.core.JpaAutoFlushEventListener;
 
 public class SaveObject {
 	
@@ -28,11 +27,7 @@ public class SaveObject {
 		jspiders.setName("home");;
 		jspiders.setFee(100);
 		
-		
-		
 		tx.commit();
-		
-		
 		
 	}
 	
