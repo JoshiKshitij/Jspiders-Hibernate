@@ -69,6 +69,12 @@ public class StudentDto implements Serializable{
 	public void setStream(String stream) {
 		this.stream = stream;
 	}
+
+
+	@Override
+	public String toString() {
+		return "StudentDto [id=" + id + ", email=" + email + ", name=" + name + ", stream=" + stream + "]";
+	}
 	
 	
 	

@@ -29,17 +29,54 @@ public class StudentDao {
 	}
 
 	public StudentDto fetchStudent(int pk) {
-
-		return null;
+		
+		// this will read the xml file and create the seesionfactory
+		Configuration configuration = new Configuration();
+		configuration.configure();
+		
+		// this will establish the connection to the database
+		// this will do the mapping for the hibernate
+		SessionFactory factory = configuration.buildSessionFactory();
+		
+		
+		// this will perform the crud operation for the application
+		Session session = factory.openSession();
+		
+		StudentDto studentDto = session.get(StudentDto.class, pk);
+		
+		return studentDto;
 	}
 
 	public void deleteStudent(int pk) {
 
 	}
 
-	public StudentDto updateStudent(StudentDto student) {
+	public void updateStudent(StudentDto student) {
 
-		return null;
+		Configuration configuration = new Configuration();
+		configuration.configure();
+		
+		SessionFactory factory = configuration.buildSessionFactory();
+		
+		
+		Session session = factory.openSession();
+		
+		Transaction transaction = session.beginTransaction();
+		
+		StudentDto stdFromDb = session.get(StudentDto.class, student.getId());
+		
+		
+		String email = student.getEmail();
+		String name = student.getName();
+		String stream = student.getStream();
+		
+		stdFromDb.setName(name);
+		stdFromDb.setStream(stream);
+		stdFromDb.setEmail(email);
+		
+		session.update(stdFromDb);
+		transaction.commit();
+		
 	}
 
 }

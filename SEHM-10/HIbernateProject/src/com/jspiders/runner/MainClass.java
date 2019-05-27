@@ -8,22 +8,36 @@ public class MainClass {
 	
 	public static void main(String[] args) {
 		
-		StudentDto kshitij = new StudentDto();
-		kshitij.setId(1);
-		kshitij.setEmail("kj@gmail.com");
-		kshitij.setName("Kshitij joshi");
-		kshitij.setStream("ece");
-		
-		StudentDto karan = new StudentDto(); 
-		karan.setId(2);
-		karan.setName("karan");
-		karan.setStream("cse");
-		karan.setEmail("karan@hmail.com");
+		/*
+		 * StudentDto rati = new StudentDto(); rati.setId(3);
+		 * rati.setEmail("rati@gmail.com"); rati.setName("rati kaur");
+		 * rati.setStream("cse");
+		 * 
+		 * StudentDto hemant = new StudentDto(); hemant.setId(4);
+		 * hemant.setName("heman"); hemant.setStream("me");
+		 * hemant.setEmail("hemant@hmail.com");
+		 * 
+		 * 
+		 * StudentDao dao = new StudentDao(); dao.saveStudent(rati);
+		 * dao.saveStudent(hemant);
+		 */
 		
 		
 		StudentDao dao = new StudentDao();
-		dao.saveStudent(kshitij);
-		dao.saveStudent(karan);
+		/*
+		 * StudentDto std = dao.fetchStudent(4); System.out.println(std);
+		 */
+		
+		StudentDto s1 = new StudentDto();
+		s1.setId(1);
+		s1.setEmail("dingga.@gmail.com");
+		s1.setName("dinga");
+		s1.setStream("punjabi");
+		
+		
+		
+		dao.updateStudent(s1);
+		
 		
 		
 		
