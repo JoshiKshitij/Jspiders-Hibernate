@@ -7,8 +7,9 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
-import com.embedded.app.dto.Laptop;
-import com.embedded.app.dto.Student;
+import com.embedded.app.dto.StudentDto;
+import com.embedded.app.dto.TeacherDto;
+
 
 
 public class Runner {
@@ -17,57 +18,105 @@ public class Runner {
 		Session session =  factory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
-		Student ayushi = new Student();
-		ayushi.setName("Ayushi");
-		ayushi.setDepartment("develpment");
-		ayushi.setMobileNo("9898989898");
 		
-		Student prabhat = new Student();
-		prabhat.setName("Prabhat");
-		prabhat.setDepartment("develpment");
-		prabhat.setMobileNo("9876598765");
-		
-		Laptop asusVivoBook = new Laptop();
-		asusVivoBook.setModel("vivo book s 15 pro");
-		asusVivoBook.setCost(70000);
-		asusVivoBook.setBrand("asus");
-		// lapop belongs to prbhat
-		asusVivoBook.setStudent(prabhat);
+		TeacherDto kshitij = new TeacherDto();
+		kshitij.setExperience("unknown");
+		kshitij.setName("Kshitij Joshi");
+		kshitij.setSubjectHeTeaches("Spring / Hibernate");
 		
 		
-		Laptop appleMacBook = new Laptop();
-		appleMacBook.setModel("Mac Book pro");
-		appleMacBook.setCost(170000);
-		appleMacBook.setBrand("Apple");
-		// laptop belong to ayushi
-		appleMacBook.setStudent(ayushi);
+		TeacherDto shishiraSir = new TeacherDto();
+		shishiraSir.setExperience("1000 years");
+		shishiraSir.setName("Shishir Sir Ji");
+		shishiraSir.setSubjectHeTeaches("Java");
 		
-		Laptop appleMacAir = new Laptop();
-		appleMacAir.setModel("Mac Book air");
-		appleMacAir.setCost(100000);
-		appleMacAir.setBrand("Apple");
-		// laptop belong to ayushi
-		appleMacAir.setStudent(ayushi);
-				
-		// laptops belong to prabhat
-		List<Laptop> listOfPrabhatLaptops = new ArrayList<Laptop>();
-		listOfPrabhatLaptops.add(asusVivoBook);
-		prabhat.setLaptops(listOfPrabhatLaptops);
 		
-		// laptops belong to ayushi
-		List<Laptop> listOfAyushiLaptops = new ArrayList<Laptop>();
-		listOfAyushiLaptops.add(appleMacAir);
-		listOfAyushiLaptops.add(appleMacBook);
-		ayushi.setLaptops(listOfAyushiLaptops);
+		TeacherDto raghuSir = new TeacherDto();
+		raghuSir.setExperience("1000 years");
+		raghuSir.setName("Raghu Sir jii");
+		raghuSir.setSubjectHeTeaches("Programming");
 		
 		
 		
-		session.save(appleMacAir);
-		session.save(appleMacBook);
-		session.save(asusVivoBook);
-		session.save(prabhat);
-		session.save(ayushi);
 		
+		StudentDto hitler = new StudentDto();
+		hitler.setName("Adolf Hitler");
+		hitler.setStars("*****");
+		hitler.setCourse("Java / Programming");
+		
+		
+		
+		StudentDto ghandiJi = new StudentDto();
+		ghandiJi.setName("MOhan Das karamChand Ghandhi JI");
+		ghandiJi.setStars("***");
+		ghandiJi.setCourse("Java");
+		
+		StudentDto shubham = new StudentDto();
+		shubham.setName("Shubham");
+		shubham.setStars("****");
+		shubham.setCourse("Java / Programming / Spring - hibernate" );
+		
+		StudentDto kavya = new StudentDto();
+		kavya.setName("kavya");
+		kavya.setStars("*****");
+		kavya.setCourse("Java / Spring - hibernate");
+		
+		
+		
+		// list of students for teachers
+		
+		List<StudentDto> listForKshitij = new ArrayList<StudentDto>();
+		listForKshitij.add(shubham);
+		listForKshitij.add(kavya);
+		kshitij.setListOfStudents(listForKshitij);
+		
+		
+		List<StudentDto> listForShishirSir = new ArrayList<StudentDto>();
+		listForShishirSir.add(shubham);
+		listForShishirSir.add(kavya);
+		listForShishirSir.add(hitler);
+		listForShishirSir.add(ghandiJi);
+		shishiraSir.setListOfStudents(listForShishirSir);
+		
+		List<StudentDto> listForRaghuSir = new ArrayList<StudentDto>();
+		listForRaghuSir.add(hitler);
+		listForRaghuSir.add(shubham);
+		raghuSir.setListOfStudents(listForRaghuSir);
+		
+		
+		
+		// list of techers for studeent;
+		List<TeacherDto> teacherListForShubham = new ArrayList<TeacherDto>();
+		teacherListForShubham.add(shishiraSir);
+		teacherListForShubham.add(raghuSir);
+		teacherListForShubham.add(kshitij);
+		shubham.setListOfTeacher(teacherListForShubham);
+		
+		
+		List<TeacherDto> teacherListForHitler = new ArrayList<TeacherDto>();
+		teacherListForHitler.add(shishiraSir);
+		teacherListForHitler.add(raghuSir);
+		hitler.setListOfTeacher(teacherListForHitler);
+		
+		
+		List<TeacherDto> teacherListForKavya = new ArrayList<TeacherDto>();
+		teacherListForKavya.add(kshitij);
+		teacherListForKavya.add(shishiraSir);
+		kavya.setListOfTeacher(teacherListForKavya);
+		
+		List<TeacherDto> teacherListForGhandiJI = new ArrayList<TeacherDto>();
+		teacherListForGhandiJI.add(shishiraSir);
+		ghandiJi.setListOfTeacher(teacherListForGhandiJI);
+		
+		
+		
+		session.save(kshitij);
+		session.save(shishiraSir);
+		session.save(raghuSir);
+		session.save(shubham);
+		session.save(kavya);
+		session.save(hitler);
+		session.save(ghandiJi);
 		
 		transaction.commit();
 		
