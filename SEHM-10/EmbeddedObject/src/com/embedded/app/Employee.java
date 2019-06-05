@@ -26,7 +26,7 @@ public class Employee implements Serializable {
 	@Column(name = "depatment")
 	private String dept;
 	
-	@Embedded
+	@Embedded // @onetTOne
 	private Address address;
 
 

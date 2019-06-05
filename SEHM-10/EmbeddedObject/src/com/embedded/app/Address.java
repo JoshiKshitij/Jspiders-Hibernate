@@ -3,8 +3,8 @@ package com.embedded.app;
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
-@Embeddable
-public class Address {
+@Embeddable  // @Entity
+class Address {
 
 	//@Column(name = "emp_city")
 	private String city;

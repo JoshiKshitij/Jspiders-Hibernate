@@ -10,13 +10,18 @@ public class NoUseOfSingleton {
 		Configuration configuration = new Configuration();
 		configuration.configure();
 		
-		
 		SessionFactory factory1 = configuration.buildSessionFactory();
 		System.out.println("--------------------------");
 		SessionFactory factory2 = configuration.buildSessionFactory();
 		
-		
 		System.out.println(factory1 == factory2);
+		
+		SessionFactory factory3 = configuration.buildSessionFactory();
+		System.out.println("--------------------------");
+		SessionFactory factory4 = configuration.buildSessionFactory();
+		System.out.println("--------------------------");
+		SessionFactory factory5 = configuration.buildSessionFactory();
+		System.out.println("--------------------------");
 	}
 
 }

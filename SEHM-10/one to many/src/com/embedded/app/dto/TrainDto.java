@@ -17,10 +17,10 @@ import org.hibernate.annotations.GenericGenerator;
 public class TrainDto {
 	
 	@Id
-	// this will assign the pk to the passanger object 
+	// this will assign the pk to the passenger object 
 	@GeneratedValue(generator = "kshitij")
 	
-	// this will create a statemt as (slect max(id ) from passanger tabe)
+	// this will create a statement as (select max(id ) from table_trains table)
 	@GenericGenerator(name = "kshitij", strategy = "increment")
 	private int id;
 
@@ -33,7 +33,7 @@ public class TrainDto {
 	@Column(name= "t_no_of_coaches")
 	private String noOfcoaches;
 
-	@OneToMany
+	@OneToMany(mappedBy="trainDto")
 	List<PassangerDto> listOfPassangers;
 
 

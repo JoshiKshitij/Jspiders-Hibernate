@@ -10,18 +10,16 @@ public class HIbernateDemo {
 		configuration.configure();
 		
 		SessionFactory factory = configuration.buildSessionFactory();
-		Session session = factory.openSession();
-		
-		Transaction transaction = session.beginTransaction();
-	
-		Student s1 = new Student();
-		s1.setRollNo(101);
-		s1.setName("robot");
-		s1.setEmail("rgb@gmail.com");
-		
-		session.save(s1);
-		transaction.commit();
-		
+		/*
+		 * Session session = factory.openSession();
+		 * 
+		 * Transaction transaction = session.beginTransaction();
+		 * 
+		 * Student s1 = new Student(); s1.setRollNo(101); s1.setName("robot");
+		 * s1.setEmail("rgb@gmail.com");
+		 * 
+		 * session.save(s1); transaction.commit();
+		 */	
 	}
 
 }

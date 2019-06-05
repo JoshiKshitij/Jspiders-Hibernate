@@ -8,6 +8,7 @@ public class HibernateUtils {
 
 	// 1. step to create a ststic varriable
 	private static SessionFactory factory = null;
+	
 	static {
 		Configuration configuration = new Configuration();
 		configuration.configure();

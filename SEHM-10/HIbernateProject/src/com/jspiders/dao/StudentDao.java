@@ -57,14 +57,11 @@ public class StudentDao {
 		configuration.configure();
 		
 		SessionFactory factory = configuration.buildSessionFactory();
-		
-		
 		Session session = factory.openSession();
 		
 		Transaction transaction = session.beginTransaction();
 		
 		StudentDto stdFromDb = session.get(StudentDto.class, student.getId());
-		
 		
 		String email = student.getEmail();
 		String name = student.getName();
