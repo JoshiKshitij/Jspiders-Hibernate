@@ -13,12 +13,17 @@ public class HQL_Rnner {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-	//	Query query = session.createQuery("select car " + "from CartoonDto as car  where rating = :rat");
-	//	query.setParameter("rat", "2");
+		// select car.* from table_cartoon as car
+		Query query = session.createQuery("select car from CartoonDto as car where rating = :rat ");
+
+		query.setParameter("rat", "4");
 		
-		Query query = session.createQuery("select car " + "from CartoonDto as car ");
 		List<CartoonDto> list = query.list();
 
+		// sql -> select c.* from table_cartoon c where rating = ?;
+
+		// Hql -> select c from CartoonDto c where rating = :r ;
+		// Hql -> select c from CartoonDto c where rating = ? ;
 		for (CartoonDto car : list) {
 			System.out.println(car);
 		}
