@@ -1,13 +1,25 @@
 package com.embedded.app;
 
+import java.util.List;
+
+import org.hibernate.Session;
+
 public class Dao_Runner {
 	
 	public static void main(String[] args) {
-		CartoonDao dao = new CartoonDao();
-	//	CartoonDto cartoonDto = dao.getCartoonByName("A");
-	//	System.out.println(cartoonDto);
-	
-	System.out.println(dao.getCartoonNamebyId(2));
+		
+		CartoonDto cartoonDto = new CartoonDto();
+		
+		Session session = HibernateUtils.getSessionFactory().openSession();
+		
+		
+		
+		session.save(cartoonDto);
+		
+		session.persist(cartoonDto);
+		
+		
+		
 	}
 }
 

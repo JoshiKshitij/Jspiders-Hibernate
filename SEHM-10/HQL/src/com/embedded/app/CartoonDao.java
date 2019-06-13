@@ -54,11 +54,23 @@ public class CartoonDao {
 
 	}
 
-	public String[] getCartoonNameAndIdbyRating(String rating) {
+	public List<Object[]> getCartoonNameAndIdbyRating(String rating) {
 
 		Session session = factory.openSession();
+		Query<Object[]> query = session.createQuery("select name , id from CartoonDto where rating = ?");
+		query.setParameter(0, rating);
+		
+		return query.list();
 
-		return null;
+	}
+	
+	public Object[] getCartoonNameAndRankbyid(long id) {
+
+		Session session = factory.openSession();
+		Query<Object[]> query = session.createQuery("select name , rating from CartoonDto where id = ?");
+		query.setParameter(0,id);
+		
+		return query.uniqueResult();
 
 	}
 
