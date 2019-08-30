@@ -4,7 +4,7 @@ Ques. What are the important benefits of using Hibernate Framework?
 Ques. What are the advantages of Hibernate over JDBC?
 Ques. Name some important interfaces of Hibernate framework?
 Ques. What is hibernate configuration file?
-Ques. What is hibernate mapping file? - xml configuration (we have used annotions)
+Ques. What is hibernate mapping file? - xml configuration (we have used annotions) ->> Student.hbm.xml 
 Ques. Name some important annotations used for Hibernate mapping?
 Ques. What is Hibernate SessionFactory and how to configure it?
 Ques. What is Hibernate Session and how to get it?
