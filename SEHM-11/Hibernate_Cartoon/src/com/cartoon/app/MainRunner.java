@@ -23,7 +23,9 @@ public class MainRunner {
 		Transaction transaction = session.beginTransaction();
 
 		Cartoons tomAndJerry = new Cartoons();
+		
 
+		
 		tomAndJerry.setCartoonName(" Tom And Jerry ");
 		tomAndJerry.setFavChar("Tom");
 

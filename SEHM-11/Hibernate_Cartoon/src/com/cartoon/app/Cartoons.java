@@ -39,5 +39,9 @@ public class Cartoons implements Serializable {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	@Override
+	public String toString() {
+		return "Cartoons [cartoonId=" + cartoonId + ", cartoonName=" + cartoonName + ", favChar=" + favChar + "]";
+	}
 
 }
