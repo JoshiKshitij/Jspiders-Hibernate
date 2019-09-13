@@ -1,5 +1,7 @@
 package com.hql.app;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -13,23 +15,25 @@ public class FetchRunner {
 		SessionFactory sf = HibernateUtil.getSessionFactory();
 
 		Session session = sf.openSession();
-
-		// Query query = session.createQuery("hql");
-
-		Query<Student> query = session.createQuery("from Student where name = 'ram'" );
-		List<Student> list = query.list();
-		System.out.println(list);
+		/*
+		 * Query<Student> query = session. createQuery("from Student where age = ?" );
+		 * query.setParameter(0, 20); List<Student> list = query.list();
+		 * System.out.println(list);
+		 */
+		
+		/*
+		 * Query<Student> newQuery = session.createQuery("from Student where age =:a" );
+		 * newQuery.setParameter("a", 20);
+		 * 
+		 * List<Student> list2 = newQuery.list(); System.out.println(list2);
+		 */
 		
 		
-		Query<Student> query1 = session.createQuery("from Student where name = ?" );
-		query1.setString(1, "ram");
 		
-	
-		List<Student> list2 = query1.list();
-		System.out.println(list2);
+		StudentDao studentDao= new StudentDao();
+		Student student = studentDao.findStudentByRollNo(4);
+		System.out.println(student);
 		
-		
-
 	}
 
 }
