@@ -21,23 +21,16 @@ public class Runner {
 
 		Human ram = new Human();
 		ram.setName("ram");
+
+//		Serializable pk = session.save(ram);
+//		Integer xyz = (Integer) pk;
+//		int abz = xyz;
+//		System.out.println(xyz);
+
+		int pk1 = (int) session.save(ram);
+		System.out.println(pk1);
 		
-		
-		 Serializable pk = session.save(ram);
-		 
-		 Integer xyz = (Integer) pk;
-		 int abz = xyz;
-		 
-		 System.out.println(xyz);
-		 
-		 int pk1 = (int)session.save(ram);
-		 
-		 
-		 
 		transaction.commit();
-		
-		
-		
 
 	}
 
