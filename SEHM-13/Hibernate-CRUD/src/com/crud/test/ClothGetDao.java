@@ -14,7 +14,7 @@ public class ClothGetDao {
 		Session session = sf.openSession();
 		
 		
-		ClothDto cl = session.get( ClothDto.class , 1);
+		ClothDto cl = session.get( ClothDto.class , 13);
 		System.out.println(cl);
 	
 		session.close();
