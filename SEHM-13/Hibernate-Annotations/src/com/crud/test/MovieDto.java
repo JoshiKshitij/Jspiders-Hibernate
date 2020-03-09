@@ -10,19 +10,22 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tbl_Movies")
+// for changing the name of table and extra stuff
+@Table(name = "tbl_Movies" )
 public class MovieDto implements Serializable {
 
+	// for PK
 	@Id
 	// automatic generation of PK
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	// for changing name of column and extra stuff
 	@Column(name = "movie_id")
 	private long id;
 	
 	@Column(name = "movie_rating")
 	private String rating;
 	
-	@Column(name = "movie_main_actor")
+	@Column(name = "movie_main_actor" )
 	private String mainActor;
 
 	public long getId() {
