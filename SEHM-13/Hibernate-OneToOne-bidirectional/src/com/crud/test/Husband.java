@@ -19,7 +19,7 @@ public class Husband implements Serializable {
 	private String name;
 	private int age;
 
-	@OneToOne
+	@OneToOne(mappedBy="husband")
 	private Wife wife;
 
 	public int getId() {
