@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -20,7 +21,7 @@ public class FatherDto implements Serializable {
 	private String name;
 	private double salary;
 	
-	@OneToMany(mappedBy="father")
+	@OneToMany(mappedBy="father", fetch = FetchType.EAGER)
 	List<SonDto> sons;
 
 	public int getId() {
